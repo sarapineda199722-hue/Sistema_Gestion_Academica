@@ -1,4 +1,7 @@
-class Persona:
+from abc import ABC, abstractmethod
+
+
+class Persona(ABC):
     def __init__(self, identificacion, nombre, correo):
         self.__identificacion = identificacion
         self.__nombre = nombre
@@ -32,4 +35,8 @@ class Persona:
         print(f"Identificación: {self.__identificacion}")
         print(f"Nombre: {self.__nombre}")
         print(f"Correo electrónico: {self.__correo}")
-        
+
+    @abstractmethod
+    def realizar_actividad_principal(self):
+        pass
+    
