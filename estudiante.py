@@ -18,6 +18,9 @@ class Estudiante(Persona):
         self.__semestre = semestre
         self.__promedio = promedio
 
+    def get_codigo_estudiantil(self):
+        return self.__codigo_estudiantil
+
     def mostrar_informacion(self):
         super().mostrar_informacion()
         print(f"Código estudiantil: {self.__codigo_estudiantil}")
