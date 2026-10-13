@@ -2,9 +2,8 @@ class Asignatura:
     def __init__(self, codigo, nombre, numero_creditos, programa_academico):
         self.__codigo = codigo
         self.__nombre = nombre
-        self.__numero_creditos = 1
+        self.__numero_creditos = numero_creditos
         self.__programa_academico = programa_academico
-        self.set_numero_creditos(numero_creditos)
 
     def get_codigo(self):
         return self.__codigo
@@ -17,6 +16,13 @@ class Asignatura:
 
     def get_programa_academico(self):
         return self.__programa_academico
+
+    def set_codigo(self, codigo):
+        if codigo.strip() != "":
+            self.__codigo = codigo
+            print("Código de la asignatura actualizado correctamente.")
+        else:
+            print("Error: el código de la asignatura no puede estar vacío.")
 
     def set_nombre(self, nombre):
         if nombre.strip() != "":
@@ -32,6 +38,10 @@ class Asignatura:
         else:
             print("Error: el número de créditos debe ser mayor que cero.")
 
+    def set_programa_academico(self, programa_academico):
+        self.__programa_academico = programa_academico
+        print("Programa académico actualizado correctamente.")
+
     def mostrar_informacion(self):
         print(f"Código: {self.__codigo}")
         print(f"Nombre: {self.__nombre}")
@@ -40,4 +50,3 @@ class Asignatura:
             f"Programa académico: "
             f"{self.__programa_academico.get_nombre()}"
         )
-        

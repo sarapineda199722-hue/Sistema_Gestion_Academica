@@ -1,12 +1,8 @@
-from abc import ABC, abstractmethod
-
-
-class Persona(ABC):
+class Persona:
     def __init__(self, identificacion, nombre, correo):
         self.__identificacion = identificacion
         self.__nombre = nombre
-        self.__correo = ""
-        self.set_correo(correo)
+        self.__correo = correo
 
     def get_identificacion(self):
         return self.__identificacion
@@ -16,6 +12,13 @@ class Persona(ABC):
 
     def get_correo(self):
         return self.__correo
+
+    def set_identificacion(self, identificacion):
+        if identificacion.strip() != "":
+            self.__identificacion = identificacion
+            print("Identificación actualizada correctamente.")
+        else:
+            print("Error: la identificación no puede estar vacía.")
 
     def set_nombre(self, nombre):
         if nombre.strip() != "":
@@ -35,8 +38,3 @@ class Persona(ABC):
         print(f"Identificación: {self.__identificacion}")
         print(f"Nombre: {self.__nombre}")
         print(f"Correo electrónico: {self.__correo}")
-
-    @abstractmethod
-    def realizar_actividad_principal(self):
-        pass
-    

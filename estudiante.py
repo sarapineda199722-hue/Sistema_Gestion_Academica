@@ -10,25 +10,32 @@ class Estudiante(Persona):
         codigo_estudiantil,
         programa_academico,
         semestre,
-        promedio
+        promedio_acumulado
     ):
         super().__init__(identificacion, nombre, correo)
         self.__codigo_estudiantil = codigo_estudiantil
         self.__programa_academico = programa_academico
         self.__semestre = semestre
-        self.__promedio = promedio
+        self.__promedio_acumulado = promedio_acumulado
 
     def get_codigo_estudiantil(self):
         return self.__codigo_estudiantil
 
+    def get_programa_academico(self):
+        return self.__programa_academico
+
+    def get_semestre(self):
+        return self.__semestre
+
+    def get_promedio_acumulado(self):
+        return self.__promedio_acumulado
+
     def mostrar_informacion(self):
         super().mostrar_informacion()
         print(f"Código estudiantil: {self.__codigo_estudiantil}")
-        print(
-            f"Programa: {self.__programa_academico.get_nombre()}"
-        )
+        print(f"Programa: {self.__programa_academico.get_nombre()}")
         print(f"Semestre: {self.__semestre}")
-        print(f"Promedio acumulado: {self.__promedio}")
+        print(f"Promedio acumulado: {self.__promedio_acumulado}")
 
     def realizar_actividad_principal(self):
         print(
@@ -36,4 +43,3 @@ class Estudiante(Persona):
             f"{self.__programa_academico.get_nombre()} "
             f"y se encuentra en el semestre {self.__semestre}."
         )
-        

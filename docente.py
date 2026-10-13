@@ -18,6 +18,18 @@ class Docente(Persona):
         self.__tipo_contratacion = tipo_contratacion
         self.__horas_semanales = horas_semanales
 
+    def get_numero_empleado(self):
+        return self.__numero_empleado
+
+    def get_facultad(self):
+        return self.__facultad
+
+    def get_tipo_contratacion(self):
+        return self.__tipo_contratacion
+
+    def get_horas_semanales(self):
+        return self.__horas_semanales
+
     def mostrar_informacion(self):
         super().mostrar_informacion()
         print(f"Número de empleado: {self.__numero_empleado}")
@@ -30,4 +42,3 @@ class Docente(Persona):
             f"El docente orienta clases en la facultad "
             f"{self.__facultad}."
         )
-        
